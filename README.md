@@ -10,6 +10,7 @@
 
 ## <a name='installation'>Installation</a>
 ```bash
+$ meteor npm i -S koa@next
 $ meteor add ssrwpo:meteor-koa
 ```
 
