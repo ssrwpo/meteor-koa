@@ -10,7 +10,7 @@
 
 ## <a name='installation'>Installation</a>
 ```bash
-$ meteor add ssr-wpo:meteor-koa
+$ meteor add ssrwpo:meteor-koa
 ```
 
 ## <a name='api'>Api</a>

@@ -1,5 +1,5 @@
 Package.describe({
-  name: 'meteor-koa',
+  name: 'ssrwpo:meteor-koa',
   version: '0.1.0',
   // Brief, one-line summary of the package.
   summary: 'Koa next generation web framework with Meteor',
