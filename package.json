@@ -1,0 +1,8 @@
+{
+  "name": "",
+  "version": "",
+  "description": "[Koa](http://koajs.com/) next generation web framework with Meteor",
+  "dependencies": {
+    "koa": "2.0.0-alpha.7"
+  }
+}
