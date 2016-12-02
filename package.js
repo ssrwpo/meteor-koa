@@ -6,27 +6,19 @@ Package.describe({
   documentation: 'README.md'
 });
 
-Package.onUse(function(api) {
+const basePackages = ['ecmascript', 'webapp', 'meteor'];
+
+Package.onUse((api) => {
   api.versionsFrom('1.4.2.3');
-  api.use('ecmascript');
+  basePackages.forEach(p => api.use(p, 'server'));
   api.use('tmeasday:check-npm-versions@0.3.1');
-
-  api.use('webapp', 'server');
-  api.use('meteor');
-
   api.mainModule('meteor-koa.js', 'server');
 });
 
-// Package.onTest(function(api) {
-//   api.use('ecmascript');
-//
-//   api.use('webapp', 'server');
-//
-//   api.use('practicalmeteor:mocha');
-//   api.use('practicalmeteor:chai');
-//
-//   api.use('meteor-koa');
-//   api.use('meteor-koa-testing');
-//
-//   api.mainModule('meteor-koa-tests.js', 'server');
-// });
+Package.onTest(function(api) {
+  basePackages.forEach(p => api.use(p));
+  api.use('practicalmeteor:mocha');
+  api.use('practicalmeteor:chai');
+  api.use('ssrwpo:meteor-koa');
+  api.mainModule('meteor-koa-tests.js', 'server');
+});

@@ -13,5 +13,6 @@ export const koa = function () {
   if (!Meteor.isPackageTest) {
     WebApp.connectHandlers.use(Meteor.bindEnvironment(app.callback()));
   }
+  
   return app;
 };
