@@ -21,7 +21,7 @@ See [koa api](https://github.com/koajs/koa/tree/v2.x) for more details.
 `meteor-koa` is only available on server side. (`Meteor.isServer`)
 
 ```javascript
-import { koa } from 'meteor/ssr-wpo:meteor-koa';
+import { koa } from 'meteor/ssrwpo:meteor-koa';
 
 const app = koa();
 
