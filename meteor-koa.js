@@ -5,6 +5,8 @@ import { WebApp } from 'meteor/webapp';
 
 export const koa = function () {
   const app = new Koa();
-  WebApp.connectHandlers.use(Meteor.bindEnvironment(app.callback()));
+  if (!Meteor.isPackageTest) {
+    WebApp.connectHandlers.use(Meteor.bindEnvironment(app.callback()));
+  }
   return app;
 };

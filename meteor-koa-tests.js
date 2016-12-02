@@ -1,11 +1,23 @@
-// Import Tinytest from the tinytest Meteor package.
-import { Tinytest } from "meteor/tinytest";
+import { WebApp } from 'meteor/webapp';
 
-// Import and rename a variable exported by meteor-koa.js.
-import { name as packageName } from "meteor/meteor-koa";
+import { assert } from 'meteor/practicalmeteor:chai';
 
-// Write your tests here!
-// Here is an example.
-Tinytest.add('meteor-koa - example', function (test) {
-  test.equal(packageName, "meteor-koa");
+import { koa } from 'meteor/meteor-koa';
+import { createRequest } from 'meteor/meteor-koa-testing';
+
+const app = koa();
+
+app.use((ctx) => {
+  ctx.body = 'Hello World';
+});
+
+const request = createRequest(app.listen());
+
+describe('meteor koa - Hello World', function () {
+  it('should say "Hello World"', function (done) {
+    request
+      .get('/')
+      .expect(200)
+      .expect('Hello World', done);
+  });
 });
